@@ -1,83 +1,247 @@
-*{
-    margin: 0;
-    padding: 0;
-}
-.choice{
-    height:206px;
-    width: 206px;
-    gap: 5rem;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-}
-.choice:hover{
-    opacity: 0.9;
-    cursor: pointer;
-    background-color: black;
-}
-h1{
-    color: blue;
-    line-height: 6rem;
-    text-align: center;
-}
-img{
-    height: 200px;
-    width: 200px;
-    border-radius: 50%;
-    justify-content: center;
-}
-.choices{
-    display: flex;
-    justify-content: center;
-    gap: 5rem;
+* {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: aqua;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #f0f0f0;
+      overflow: hidden;
+    }
+
+    .container {
+      background: rgba(0, 0, 0, 0.7);
+      padding: 2.5rem 3rem;
+      border-radius: 18px;
+      text-align: center;
+      width: 380px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7);
+    }
+
+    h1 {
+      margin-bottom: 2rem;
+      font-weight: 900;
+      font-size: 2.7rem;
+      letter-spacing: 3px;
+      color: #fff;
+      text-shadow: 0 0 10px #48dbfb;
+    }
+
+    .score-board {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 1.8rem;
+      font-size: 1.3rem;
+      font-weight: 700;
+    }
+
+    .score {
+      background-color: rgba(255, 255, 255, 0.15);
+      padding: 0.8rem 1.3rem;
+      border-radius: 14px;
+      width: 45%;
+      user-select: none;
+      box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+      transition: background-color 0.3s ease;
+    }
+
+    .moves {
+      margin-bottom: 1.5rem;
+      user-select: none;
+    }
+
+    .move {
+      background-color: rgba(255, 255, 255, 0.12);
+      padding: 0.7rem 1.2rem;
+      border-radius: 14px;
+      margin: 0.3rem 0;
+      font-weight: 600;
+      font-size: 1.15rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.6rem;
+      color: #e1e1e1;
+      text-shadow: 0 0 3px #000;
+    }
+
+    .move .icon {
+      font-size: 1.5rem;
+    }
+
+    .result {
+      font-size: 1.4rem;
+      margin-bottom: 1.8rem;
+      font-weight: 800;
+      min-height: 2.2rem;
+      user-select: none;
+      color: #ffda79;
+      text-shadow: 0 0 8px #ffc107;
+      transition: color 0.3s ease;
+    }
+
+    .choices {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 2rem;
+    }
+
+    .choice {
+      background-color: #1e90ff;
+      border: none;
+      padding: 1rem 0;
+      font-size: 1.4rem;
+      border-radius: 18px;
+      cursor: pointer;
+      flex: 1;
+      margin: 0 0.35rem;
+      color: white;
+      font-weight: 900;
+      user-select: none;
+      box-shadow: 0 4px 15px rgba(30, 144, 255, 0.5);
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      line-height: 1.2;
+    }
+
+    .choice:hover,
+    .choice:focus {
+      background-color: #4eaaff;
+      outline: none;
+      transform: scale(1.1);
+    }
+
+    .choice:active {
+      transform: scale(0.95);
+    }
+
+    .new-game {
+      width: 100%;
+      background-color: #28a745;
+      font-weight: 700;
+      font-size: 1.2rem;
+      padding: 0.9rem 0;
+      border-radius: 20px;
+      border: none;
+      cursor: pointer;
+      color: #fff;
+      box-shadow: 0 6px 12px #1e7e34;
+      user-select: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .new-game:hover,
+    .new-game:focus {
+      background-color: #3ede63;
+      outline: none;
+    }
+
+    .new-game:active {
+      background-color: #24963f;
+    }
+
     
-}
-.score-board{
-    text-align: center;
-    display: flex;
-    gap: 19vmin;
-    justify-content: center;
-    line-height: 4rem;
-}
-p{
-    font-size: 20px;
-    color:blueviolet;
-  
-}
-.message{
-    margin-top: 5rem;
-}
-#pg{
-    background-color: aquamarine;
-    justify-content: center;
-    text-align: center;
-    justify-items: center;
-    cursor:pointer;
-}
-.winner{
-    text-align: center;
-    background-color: blanchedalmond;
-    color: rgb(226, 141, 43);
-    font-size: large;
-    text-decoration: dashed;
-    margin-bottom: 3vmin;
-}
-#user-score{
-    color: aliceblue;
-    background-color: rgb(84, 143, 75);
-    border-radius: 50%;
-    width: 60px;
-    height:60px
-}
-#com-score{
-    color: aliceblue;
-    background-color: red;
-    border-radius: 50%;
-    width: 60px;
-    height:60px
+    .result.win {
+      color: #28a745;
+      text-shadow: 0 0 12px #28a745;
+    }
+
+    .result.lose {
+      color: #dc3545;
+      text-shadow: 0 0 12px #dc3545;
+    }
+
+    .result.draw {
+      color: #ffc107;
+      text-shadow: 0 0 12px #ffc107;
+    }
+
+   .popup {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.85);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      animation: fadeIn 0.3s ease forwards;
+    }
+
+    .popup.hidden {
+      display: none;
+    }
+
+    .popup-content {
+      background: #222;
+      padding: 2.5rem 3rem;
+      border-radius: 20px;
+      width: 320px;
+      text-align: center;
+      box-shadow: 0 0 30px #00ffc3;
+      color: #00ffc3;
+      user-select: none;
+    }
+
+    .popup-content h2 {
+      margin-bottom: 1rem;
+      font-size: 2rem;
+    }
+
+    .popup-content p {
+      font-size: 1.2rem;
+      margin-bottom: 1.8rem;
+      font-weight: 700;
+    }
+
+    .popup-content button {
+      background: #00ffc3;
+      color: #222;
+      font-weight: 700;
+      font-size: 1.1rem;
+      padding: 0.8rem 1.4rem;
+      border-radius: 14px;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .popup-content button:hover,
+    .popup-content button:focus {
+      background-color: #00cc9a;
+      outline: none;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
     
-}
-.compsize{
-    height: 20px;
-    width: 20px;
-}
+    @media (max-width: 400px) {
+      .container {
+        width: 90vw;
+        padding: 1.8rem 2rem;
+      }
+      h1 {
+        font-size: 2rem;
+      }
+      .choice {
+        font-size: 1.1rem;
+      }
+      .new-game {
+        font-size: 1rem;
+      }
+    }
+    
