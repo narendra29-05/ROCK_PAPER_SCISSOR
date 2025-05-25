@@ -15,9 +15,9 @@ const userScoreEl = document.getElementById("user-score");
 
 
     const choiceEmoji = {
-      rock: "🪨",
-      paper: "📄",
-      scissor: "✂️",
+      rock: "✊",
+      paper: "✋",
+      scissor: "✌️",
     };
 
 
