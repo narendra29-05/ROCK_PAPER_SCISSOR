@@ -35,7 +35,7 @@ Clone the repository:
 bash
 Copy
 Edit
-git clone https://github.com/yourusername/rock-paper-scissors.git
+git clone https://github.com/narendra29-05/ROCK_PAPER_SCISSOR.git
 Open index.html in any modern browser.
 
 Technologies Used
